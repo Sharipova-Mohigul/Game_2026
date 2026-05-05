@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbo Kart Racing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div id="ui">
+        <div id="lobby" class="panel">
+            <h1>TURBO <span class="accent">KART</span></h1>
+            <input type="text" id="nameInput" placeholder="Driver Name" maxlength="12">
+            <button id="joinBtn">JOIN RACE</button>
+        </div>
+
+        <div id="game-ui" class="hidden">
+            <div id="leaderboard">
+                <h3>DRIVERS</h3>
+                <div id="playerList"></div>
+            </div>
+            <div id="speedometer">
+                <span id="speedValue">0</span> <small>KM/H</small>
+            </div>
+            <button id="startBtn" class="hidden">START RACE</button>
+        </div>
+
+        <div id="winner-screen" class="hidden">
+            <h2 id="winner-name"></h2>
+            <p>HAS WON THE RACE!</p>
+            <button onclick="location.reload()">REPLAY</button>
+        </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <script type="module" src="game.js"></script>
+</body>
+</html>
